@@ -1,0 +1,177 @@
+[gd_scene load_steps=21 format=3 uid="uid://cg5orgskkx76f"]
+
+[ext_resource type="LabelSettings" uid="uid://crvmo1nvrafsl" path="res://tr2n/text.tres" id="1_13nnr"]
+[ext_resource type="Script" path="res://scripts/disc.gd" id="2_dkabp"]
+[ext_resource type="Script" path="res://scripts/score.gd" id="3_0sh76"]
+[ext_resource type="Texture2D" uid="uid://buuh0cq8am0iq" path="res://images/disc0.png" id="3_h5s1w"]
+[ext_resource type="Texture2D" uid="uid://5mal70xxp8ba" path="res://images/disc1.png" id="4_hsels"]
+[ext_resource type="Script" path="res://scripts/bit.gd" id="5_tkcwj"]
+[ext_resource type="Texture2D" uid="uid://bi6ymd4r5im2a" path="res://images/bit0.png" id="6_4w6uc"]
+[ext_resource type="Script" path="res://scripts/goal.gd" id="7"]
+[ext_resource type="Script" path="res://scripts/tbwall.gd" id="8"]
+[ext_resource type="Texture2D" uid="uid://o6q2qco11w6a" path="res://images/Tockey0.png" id="10_mtaa3"]
+[ext_resource type="Texture2D" uid="uid://7ekxsfhn4pmq" path="res://images/goal0.png" id="10_pjgjb"]
+[ext_resource type="Texture2D" uid="uid://cxrjydk16qgn" path="res://images/goal1.png" id="11_11ic1"]
+[ext_resource type="Texture2D" uid="uid://dsadbe7vxa1y3" path="res://images/separator.png" id="12_8yc1r"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o31c5"]
+size = Vector2(13, 63.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v55cf"]
+size = Vector2(12, 63)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_f6ubb"]
+radius = 45.5439
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_uadfx"]
+radius = 45.511
+
+[sub_resource type="RectangleShape2D" id="2"]
+size = Vector2(27.1111, 27.1111)
+
+[sub_resource type="RectangleShape2D" id="3"]
+size = Vector2(10, 730)
+
+[sub_resource type="RectangleShape2D" id="4"]
+size = Vector2(1315, 10)
+
+[node name="Tockey" type="Node2D"]
+
+[node name="Background" type="ColorRect" parent="."]
+custom_minimum_size = Vector2(680, 400)
+offset_right = 1280.0
+offset_bottom = 720.0
+color = Color(0, 0, 0, 1)
+
+[node name="Tockey_Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(640, 77)
+texture = ExtResource("10_mtaa3")
+
+[node name="User0Score" type="Label" parent="."]
+modulate = Color(0, 1, 1, 1)
+offset_left = 249.0
+offset_top = 63.0
+offset_right = 370.0
+offset_bottom = 98.0
+text = "User 0 :"
+label_settings = ExtResource("1_13nnr")
+script = ExtResource("3_0sh76")
+
+[node name="User1Score" type="Label" parent="."]
+modulate = Color(1, 0.52549, 0, 1)
+offset_left = 866.0
+offset_top = 61.0
+offset_right = 1003.0
+offset_bottom = 96.0
+text = "User 1 :"
+label_settings = ExtResource("1_13nnr")
+script = ExtResource("3_0sh76")
+
+[node name="Goal0" type="Area2D" parent="."]
+position = Vector2(40, 360)
+scale = Vector2(2, 2)
+script = ExtResource("7")
+
+[node name="Sprite2D" type="Sprite2D" parent="Goal0"]
+texture = ExtResource("10_pjgjb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Goal0"]
+position = Vector2(-10, 0.25)
+shape = SubResource("RectangleShape2D_o31c5")
+
+[node name="Goal1" type="Area2D" parent="."]
+position = Vector2(1240, 360)
+scale = Vector2(2, 2)
+script = ExtResource("7")
+
+[node name="Sprite2D" type="Sprite2D" parent="Goal1"]
+texture = ExtResource("11_11ic1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Goal1"]
+position = Vector2(9.5, 0)
+shape = SubResource("RectangleShape2D_v55cf")
+
+[node name="Ldisc" type="Area2D" parent="."]
+position = Vector2(60, 360)
+script = ExtResource("2_dkabp")
+
+[node name="Sprite2D" type="Sprite2D" parent="Ldisc"]
+position = Vector2(7.008, 0)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("3_h5s1w")
+
+[node name="Collision" type="CollisionShape2D" parent="Ldisc"]
+position = Vector2(7.5, 0)
+shape = SubResource("CircleShape2D_f6ubb")
+
+[node name="Rdisc" type="Area2D" parent="."]
+position = Vector2(1210, 360)
+script = ExtResource("2_dkabp")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Rdisc"]
+position = Vector2(-0.499973, 0)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("4_hsels")
+
+[node name="Collision2" type="CollisionShape2D" parent="Rdisc"]
+position = Vector2(-0.5, 0)
+shape = SubResource("CircleShape2D_uadfx")
+
+[node name="Bit" type="Area2D" parent="."]
+position = Vector2(638.5, 360)
+script = ExtResource("5_tkcwj")
+
+[node name="Sprite2D3" type="Sprite2D" parent="Bit"]
+texture = ExtResource("6_4w6uc")
+
+[node name="Collision3" type="CollisionShape2D" parent="Bit"]
+position = Vector2(0, 0.5)
+scale = Vector2(2.25, 2.25)
+shape = SubResource("2")
+
+[node name="Separator" type="Sprite2D" parent="."]
+position = Vector2(638.5, 360.417)
+scale = Vector2(-0.5, 1.86209)
+texture = ExtResource("12_8yc1r")
+
+[node name="LeftWall" type="Area2D" parent="."]
+position = Vector2(-10, 360)
+script = ExtResource("8")
+
+[node name="Collision" type="CollisionShape2D" parent="LeftWall"]
+shape = SubResource("3")
+
+[node name="RightWall" type="Area2D" parent="."]
+position = Vector2(1290, 360)
+script = ExtResource("8")
+
+[node name="Collision" type="CollisionShape2D" parent="RightWall"]
+shape = SubResource("3")
+
+[node name="TopWall" type="Area2D" parent="."]
+position = Vector2(640, -10)
+script = ExtResource("8")
+
+[node name="Collision" type="CollisionShape2D" parent="TopWall"]
+shape = SubResource("4")
+
+[node name="BottomWall" type="Area2D" parent="."]
+position = Vector2(640, 730)
+script = ExtResource("8")
+_bounce_direction = -1
+
+[node name="Collision" type="CollisionShape2D" parent="BottomWall"]
+shape = SubResource("4")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+offset = Vector2(640, 360)
+
+[connection signal="area_entered" from="Goal0" to="Goal0" method="_on_goal_area_entered"]
+[connection signal="area_entered" from="Goal1" to="Goal0" method="_on_goal_area_entered"]
+[connection signal="area_entered" from="Ldisc" to="Ldisc" method="_on_area_entered"]
+[connection signal="area_entered" from="Rdisc" to="Rdisc" method="_on_area_entered"]
+[connection signal="area_entered" from="Bit" to="Bit" method="_on_area_entered"]
+[connection signal="area_entered" from="LeftWall" to="LeftWall" method="_on_wall_area_entered"]
+[connection signal="area_entered" from="RightWall" to="RightWall" method="_on_wall_area_entered"]
+[connection signal="area_entered" from="TopWall" to="TopWall" method="_on_wall_area_entered"]
+[connection signal="area_entered" from="BottomWall" to="BottomWall" method="_on_wall_area_entered"]
