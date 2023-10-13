@@ -1,5 +1,7 @@
 extends Area2D
 
+
+
 const MOVE_SPEED = 500
 
 var _up
