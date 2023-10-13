@@ -17,9 +17,8 @@ Use controls (WASD for player 1, and Arrow Keys for player 2) to move disc aroun
 | Right     | A       | Right Arrow |
 | Left      | D       | Left Arrow  |
 
-{Provide a link to your YouTube demonstration.  It should be a 4-5 minute demo of the game being played and a walkthrough of the code.}
 
-[Software Demo Video](http://youtube.link.goes.here)
+[Demo](https://youtu.be/J7VL4bR3Yvs)
 
 # Development Environment
 
@@ -30,7 +29,6 @@ Language: GDscript
 
 # Useful Websites
 
-{Make a list of websites that you found helpful in this project}
 * [Official Documentation](https://docs.godotengine.org/en/stable/getting_started/first_2d_game/index.html)
 * [Scoreboard](https://youtu.be/xs8K0E9Qogk?si=WyfXAI_oxpoo2cF4)
 * [Signals](https://docs.godotengine.org/en/stable/getting_started/step_by_step/signals.html)

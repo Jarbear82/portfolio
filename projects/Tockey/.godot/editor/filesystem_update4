@@ -1,2 +1,8 @@
+res://scripts/bit.gd
+res://scripts/disc.gd
+res://scripts/Global.gd
+res://scripts/goal.gd
+res://README.md
 res://tockey.tscn
 res://tr2n/text.tres
+res://scripts/score.gd

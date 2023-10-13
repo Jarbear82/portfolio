@@ -8,6 +8,6 @@ func _on_goal_area_entered(area):
 		area.reset()
 		# Update Score
 		if name == "Goal0":
-			get_node("Score1")
+			get_node("Score")
 		elif name == "Goal1":
 			get_node("Score2")
