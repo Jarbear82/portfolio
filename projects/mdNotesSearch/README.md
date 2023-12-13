@@ -26,9 +26,9 @@ Python modules used:
 
 # Useful Websites
 
-- [W3 Schools](https://www.w3schools.com/python/)
-- [Python Documentation (regular expressions)](https://docs.python.org/3/library/re.html)
-- [Python Documentation (reading files)] (https://docs.python.org/3/tutorial/inputoutput.html)
+- [W3 Schools:](https://www.w3schools.com/python/) For reference
+- [Python Documentation:](https://docs.python.org/3/library/re.html) For regular expressions
+- [Python Documentation:](https://docs.python.org/3/tutorial/inputoutput.html) For reading files
 
 
 # Future Work
